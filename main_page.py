@@ -46,4 +46,8 @@ class MainPage(BasePage):
         price = a.text
         b = self.browser.find_element(*MainPageLocators.Price_assert)
         price2 = b.text
-        assert price in price2 , 'Стоимость не совпадает'
+        c = self.browser.find_element(*MainPageLocators.Price_basket)
+        price3 = c.text
+        assert price in price2, 'Стоимость алёрта и стоимость книги не совпадает'
+        assert price in price3, 'Стоимость в корзине и стоимость товара не совпадают'
+

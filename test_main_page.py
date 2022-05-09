@@ -28,8 +28,8 @@ def test_guest_can_go_to_login_page(browser):
     login_page = page.should_be_login_link()
     add_to_basket = page.add_to_basket()
     add = page.solve_quiz_and_get_code()
-    scroll = browser.execute_script("window.scrollBy(0,300);")
-    time.sleep(3)
+    scroll = browser.execute_script("window.scrollBy(0,125);")
+    time.sleep(2)
     name_check = page.assert_book_name()
     price = page.cost()
 
