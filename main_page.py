@@ -33,3 +33,17 @@ class MainPage(BasePage):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def assert_book_name(self):
+        n = self.browser.find_element(*MainPageLocators.Title)
+        title = n.text
+        x = self.browser.find_element(*MainPageLocators.Title_assert)
+        title2 = x.text
+        assert title in title2 , 'Названия книг не совпадают'
+
+    def cost(self):
+        a = self.browser.find_element(*MainPageLocators.Main_Price)
+        price = a.text
+        b = self.browser.find_element(*MainPageLocators.Price_assert)
+        price2 = b.text
+        assert price in price2 , 'Стоимость не совпадает'
