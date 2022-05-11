@@ -39,15 +39,15 @@ class MainPage(BasePage):
         title = n.text
         x = self.browser.find_element(*MainPageLocators.Title_assert)
         title2 = x.text
-        assert title in title2 , 'Названия книг не совпадают'
+        assert title == title2 , 'Названия книг не совпадают'
 
     def cost(self):
         a = self.browser.find_element(*MainPageLocators.Main_Price)
         main_price = a.text
         b = self.browser.find_element(*MainPageLocators.Price_assert)
         allert_price = b.text
-        c = self.browser.find_element(*MainPageLocators.Price_basket)
-        basket_price = c.text
-        assert main_price in allert_price, 'Стоимость алёрта и стоимость книги не совпадает'
-        assert main_price in basket_price, 'Стоимость в корзине и стоимость товара не совпадают'
+        #c = self.browser.find_element(*MainPageLocators.Price_basket)
+        #basket_price = c.text
+        assert main_price == allert_price, 'Стоимость алёрта и стоимость книги не совпадает'
+        #assert main_price == basket_price, 'Стоимость в корзине и стоимость товара не совпадают'
 
